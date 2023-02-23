@@ -1,0 +1,179 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/logo_image"
+        android:layout_width="match_parent"
+        android:layout_height="93dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/lo" />
+    <TextView
+        android:id="@+id/blank"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/seller_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Seller Name"
+        android:ems="1"/>
+
+    <EditText
+        android:id="@+id/buyer_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Buyer Name"/>
+
+    <EditText
+        android:id="@+id/transporter_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Transport Name"/>
+
+    <EditText
+        android:id="@+id/gst"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="GSTIN"
+        android:inputType="number"/>
+
+    <TableLayout
+        android:id="@+id/tableLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal">
+
+            <TextView
+                android:padding="8dp"
+                android:text="Desc."
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:padding="8dp"
+                android:text="Batch"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:padding="8dp"
+                android:text="Rate"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal">
+
+            <EditText
+                android:id="@+id/a1EditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                />
+
+            <EditText
+                android:id="@+id/b1EditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:id="@+id/c1EditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal">
+
+            <EditText
+                android:id="@+id/a2EditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+              />
+
+            <EditText
+                android:id="@+id/b2EditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                 />
+
+            <EditText
+                android:id="@+id/c2EditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+               />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal">
+
+            <EditText
+                android:id="@+id/a3EditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                 />
+
+            <EditText
+                android:id="@+id/b3EditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                 />
+
+            <EditText
+                android:id="@+id/c3EditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                 />
+
+        </TableRow>
+
+    </TableLayout>
+    <TextView
+        android:id="@+id/blank2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <EditText
+        android:id="@+id/more_details"
+        android:layout_width="374dp"
+        android:layout_height="45dp"
+        android:ems="10"
+        android:gravity="start|top"
+        android:hint="More Details"
+        android:inputType="textMultiLine" />
+
+    <Button
+        android:id="@+id/convert_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Save PDF" />
+
+</LinearLayout>
