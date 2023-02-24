@@ -1,8 +1,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:padding="16dp"
     tools:context=".MainActivity">
 
@@ -11,7 +11,9 @@
         android:layout_width="match_parent"
         android:layout_height="93dp"
         android:scaleType="centerInside"
-        android:src="@drawable/lo" />
+        android:src="@drawable/hhh"
+        android:contentDescription="TODO" />
+
     <TextView
         android:id="@+id/blank"
         android:layout_width="match_parent"
@@ -20,28 +22,36 @@
     <EditText
         android:id="@+id/seller_name"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Seller Name"
-        android:ems="1"/>
+        android:layout_height="48dp"
+        android:ems="1"
+        android:inputType="textPersonName"
+        android:hint="Seller Name" />
+
+
 
     <EditText
         android:id="@+id/buyer_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Buyer Name"/>
+        android:hint="Buyer Name"
+        android:inputType="textPersonName"
+        android:minHeight="48dp" />
 
     <EditText
         android:id="@+id/transporter_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Transport Name"/>
+        android:hint="Transport Name"
+        android:inputType="textPersonName"
+        android:minHeight="48dp" />
 
     <EditText
         android:id="@+id/gst"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="GSTIN"
-        android:inputType="number"/>
+        android:inputType="number"
+        tools:ignore="TouchTargetSizeCheck" />
 
     <TableLayout
         android:id="@+id/tableLayout"
@@ -62,7 +72,7 @@
 
             <TextView
                 android:padding="8dp"
-                android:text="Batch"
+                android:text="Meter"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
@@ -83,20 +93,22 @@
                 android:id="@+id/a1EditText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-
-                />
+                android:inputType="textPersonName"
+                tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
             <EditText
                 android:id="@+id/b1EditText"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
             <EditText
                 android:id="@+id/c1EditText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-
-                />
+                android:inputType="textPersonName"
+                tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
         </TableRow>
 
@@ -109,22 +121,22 @@
                 android:id="@+id/a2EditText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-
-              />
+                android:inputType="textPersonName"
+                tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
             <EditText
                 android:id="@+id/b2EditText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-
-                 />
+                android:inputType="textPersonName"
+                tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
             <EditText
                 android:id="@+id/c2EditText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-
-               />
+                android:inputType="textPersonName"
+                tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
         </TableRow>
 
@@ -137,34 +149,36 @@
                 android:id="@+id/a3EditText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-
-                 />
+                android:inputType="textPersonName"
+                tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
             <EditText
                 android:id="@+id/b3EditText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-
-                 />
+                android:inputType="textPersonName"
+                tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
             <EditText
                 android:id="@+id/c3EditText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-
-                 />
+                android:inputType="textPersonName"
+                tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
         </TableRow>
 
     </TableLayout>
+
     <TextView
         android:id="@+id/blank2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+
     <EditText
         android:id="@+id/more_details"
         android:layout_width="374dp"
-        android:layout_height="45dp"
+        android:layout_height="48dp"
         android:ems="10"
         android:gravity="start|top"
         android:hint="More Details"
@@ -174,6 +188,7 @@
         android:id="@+id/convert_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Save PDF" />
+        android:text="Save and Share PDF" />
+
 
 </LinearLayout>

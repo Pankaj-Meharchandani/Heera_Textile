@@ -181,13 +181,18 @@ public class MainActivity extends AppCompatActivity {
             PdfWriter.getInstance(document, outputStream);
             document.open();
 
-//
-            Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.heratextile);
+
+            Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.hh);
             ByteArrayOutputStream stream = new ByteArrayOutputStream();
             bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
             Image image = Image.getInstance(stream.toByteArray());
             image.setAlignment(Image.ALIGN_CENTER);
             document.add(image);
+//            Image logo = Image.getInstance(R.drawable.hh);
+//            logo.setAlignment(Element.ALIGN_CENTER);
+//            logo.scalePercent(50f);
+//            document.add(logo);
+
 
             Font Datef = new Font(Font.FontFamily.TIMES_ROMAN, 20);
             Font font3 = new Font(Font.FontFamily.TIMES_ROMAN, 15, Font.BOLD);
@@ -208,7 +213,8 @@ public class MainActivity extends AppCompatActivity {
             cell1.setHorizontalAlignment(Element.ALIGN_CENTER);
             table.addCell(cell1);
 
-            PdfPCell cell2 = new PdfPCell(new Paragraph("Batch", font3));
+
+            PdfPCell cell2 = new PdfPCell(new Paragraph("meter", font3));
             cell2.setHorizontalAlignment(Element.ALIGN_CENTER);
             table.addCell(cell2);
 
@@ -218,56 +224,56 @@ public class MainActivity extends AppCompatActivity {
 
             table.setHeaderRows(1);
 
-            PdfPCell a1Cell = new PdfPCell(new Paragraph(a1EditText.getText().toString()));
+            PdfPCell a1Cell = new PdfPCell(new Paragraph(a1EditText.getText().toString().isEmpty() ? " " : a1EditText.getText().toString()));
             a1Cell.setHorizontalAlignment(Element.ALIGN_CENTER);
             table.addCell(a1Cell);
 
 
-            PdfPCell b1Cell = new PdfPCell(new Paragraph(b1EditText.getText().toString()));
+            PdfPCell b1Cell = new PdfPCell(new Paragraph(b1EditText.getText().toString().isEmpty() ? " " : b1EditText.getText().toString()));
             b1Cell.setHorizontalAlignment(Element.ALIGN_CENTER);
             table.addCell(b1Cell);
 
-            PdfPCell c1Cell = new PdfPCell(new Paragraph(c1EditText.getText().toString()));
+            PdfPCell c1Cell = new PdfPCell(new Paragraph(c1EditText.getText().toString().isEmpty() ? " " : c1EditText.getText().toString()));
             c1Cell.setHorizontalAlignment(Element.ALIGN_CENTER);
             table.addCell(c1Cell);
 
-            PdfPCell a2Cell = new PdfPCell(new Paragraph(a2EditText.getText().toString()));
+            PdfPCell a2Cell = new PdfPCell(new Paragraph(a2EditText.getText().toString().isEmpty() ? " " : a2EditText.getText().toString()));
             a2Cell.setHorizontalAlignment(Element.ALIGN_CENTER);
             table.addCell(a2Cell);
 
-            PdfPCell b2Cell = new PdfPCell(new Paragraph(b2EditText.getText().toString()));
+            PdfPCell b2Cell = new PdfPCell(new Paragraph(b2EditText.getText().toString().isEmpty() ? " " : b2EditText.getText().toString()));
             b2Cell.setHorizontalAlignment(Element.ALIGN_CENTER);
             table.addCell(b2Cell);
 
-            PdfPCell c2Cell = new PdfPCell(new Paragraph(c2EditText.getText().toString()));
+            PdfPCell c2Cell = new PdfPCell(new Paragraph(c2EditText.getText().toString().isEmpty() ? " " : c2EditText.getText().toString()));
             c2Cell.setHorizontalAlignment(Element.ALIGN_CENTER);
             table.addCell(c2Cell);
 
-            PdfPCell a3Cell = new PdfPCell(new Paragraph(a3EditText.getText().toString()));
+            PdfPCell a3Cell = new PdfPCell(new Paragraph(a3EditText.getText().toString().isEmpty() ? " " : a3EditText.getText().toString()));
             a3Cell.setHorizontalAlignment(Element.ALIGN_CENTER);
             table.addCell(a3Cell);
 
-            PdfPCell b3Cell = new PdfPCell(new Paragraph(b3EditText.getText().toString()));
+            PdfPCell b3Cell = new PdfPCell(new Paragraph(b3EditText.getText().toString().isEmpty() ? " " : b3EditText.getText().toString()));
             b3Cell.setHorizontalAlignment(Element.ALIGN_CENTER);
             table.addCell(b3Cell);
 
-            PdfPCell c3Cell = new PdfPCell(new Paragraph(c3EditText.getText().toString()));
+            PdfPCell c3Cell = new PdfPCell(new Paragraph(c3EditText.getText().toString().isEmpty() ? " " : c3EditText.getText().toString()));
             c3Cell.setHorizontalAlignment(Element.ALIGN_CENTER);
             table.addCell(c3Cell);
 
-            int sum = calculateSumOfCColumn();
-            Paragraph sumParagraph = new Paragraph(" "+ sum);
+//            int sum = calculateSumOfCColumn();
+//            Paragraph sumParagraph = new Paragraph(" "+ sum);
 
             //document.add(sumParagraph);
 
 //
 //            To add the table to the document
-            table.addCell("Total");
-
-            table.addCell(" ");
-
-            table.addCell(sumParagraph);
-
+//            table.addCell("Total");
+//
+//            table.addCell(" ");
+//
+//            table.addCell(sumParagraph);
+//
 
             document.add(table);
 
