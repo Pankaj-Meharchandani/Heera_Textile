@@ -1,4 +1,10 @@
 package com.pankaj.heratextile;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+import androidx.core.content.FileProvider;
+
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -8,6 +14,8 @@ import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -16,10 +24,7 @@ import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
-import androidx.core.content.FileProvider;
+
 
 import com.itextpdf.text.Document;
 import com.itextpdf.text.Element;
@@ -43,27 +48,50 @@ public class MainActivity extends AppCompatActivity {
     private EditText sellerNameEditText;
     private EditText buyerNameEditText;
     private EditText moreinfo;
-   // private EditText date;
+    // private EditText date;
     private EditText transporter;
     private EditText gst;
     private Button savePdfButton;
-//    private Button sharePdfButton;
+    //    private Button sharePdfButton;
     private ImageView logoImageView;
     private TableLayout tableLayout;
     private EditText a1EditText;
     private EditText a2EditText;
     private EditText a3EditText;
+    private EditText a4EditText;
+    private EditText a5EditText;
+    private EditText a6EditText;
+    private EditText a7EditText;
+    private EditText a8EditText;
+    private EditText a9EditText;
+    private EditText a10EditText;
+
+
     private EditText b1EditText;
     private EditText b2EditText;
     private EditText b3EditText;
+    private EditText b4EditText;
+    private EditText b5EditText;
+    private EditText b6EditText;
+    private EditText b7EditText;
+    private EditText b8EditText;
+    private EditText b9EditText;
+    private EditText b10EditText;
     private EditText c1EditText;
     private EditText c2EditText;
     private EditText c3EditText;
+    private EditText c4EditText;
+    private EditText c5EditText;
+    private EditText c6EditText;
+    private EditText c7EditText;
+    private EditText c8EditText;
+    private EditText c9EditText;
+    private EditText c10EditText;
+
 
     private static final int REQUEST_CODE = 100;
 
 
-    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -77,21 +105,40 @@ public class MainActivity extends AppCompatActivity {
         gst = findViewById(R.id.gst);
         savePdfButton = findViewById(R.id.convert_button);
 //        sharePdfButton = findViewById(R.id.button);
-        logoImageView = findViewById(R.id.logo_image);
+       // logoImageView = findViewById(R.id.logo_image);
 
         //table
         tableLayout = findViewById(R.id.tableLayout);
         a1EditText= findViewById(R.id.a1EditText);
         a2EditText= findViewById(R.id.a2EditText);
         a3EditText= findViewById(R.id.a3EditText);
+        a4EditText= findViewById(R.id.a4EditText);
+        a5EditText= findViewById(R.id.a5EditText);
+        a6EditText= findViewById(R.id.a6EditText);
+        a7EditText= findViewById(R.id.a7EditText);
+        a8EditText= findViewById(R.id.a8EditText);
+        a9EditText= findViewById(R.id.a9EditText);
+        a10EditText= findViewById(R.id.a10EditText);
         b1EditText= findViewById(R.id.b1EditText);
         b2EditText= findViewById(R.id.b2EditText);
         b3EditText= findViewById(R.id.b3EditText);
+        b4EditText= findViewById(R.id.b4EditText);
+        b5EditText= findViewById(R.id.b5EditText);
+        b6EditText= findViewById(R.id.b6EditText);
+        b7EditText= findViewById(R.id.b7EditText);
+        b8EditText= findViewById(R.id.b8EditText);
+        b9EditText= findViewById(R.id.b9EditText);
+        b10EditText= findViewById(R.id.b10EditText);
         c1EditText= findViewById(R.id.c1EditText);
         c2EditText= findViewById(R.id.c2EditText);
         c3EditText= findViewById(R.id.c3EditText);
-
-
+        c4EditText= findViewById(R.id.c4EditText);
+        c5EditText= findViewById(R.id.c5EditText);
+        c6EditText= findViewById(R.id.c6EditText);
+        c7EditText= findViewById(R.id.c7EditText);
+        c8EditText= findViewById(R.id.c8EditText);
+        c9EditText= findViewById(R.id.c9EditText);
+        c10EditText= findViewById(R.id.c10EditText);
 
 
         savePdfButton.setOnClickListener(new View.OnClickListener() {
@@ -107,23 +154,47 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
+
     public void addRow(View view) {
         TableRow tableRow = new TableRow(this);
 
         EditText editText1 = new EditText(this);
         EditText editText2 = new EditText(this);
         EditText editText3 = new EditText(this);
+        EditText editText4 = new EditText(this);
+        EditText editText5 = new EditText(this);
+        EditText editText6 = new EditText(this);
+        EditText editText7 = new EditText(this);
+        EditText editText8 = new EditText(this);
+        EditText editText9 = new EditText(this);
+        EditText editText10 = new EditText(this);
 
         editText1.setHint("A");
         editText2.setHint("B");
         editText3.setHint("C");
+        editText4.setHint("D");
+        editText5.setHint("E");
+        editText6.setHint("F");
+        editText7.setHint("G");
+        editText8.setHint("H");
+        editText9.setHint("I");
+        editText10.setHint("J");
+
 
         tableRow.addView(editText1);
         tableRow.addView(editText2);
         tableRow.addView(editText3);
+        tableRow.addView(editText4);
+        tableRow.addView(editText5);
+        tableRow.addView(editText6);
+        tableRow.addView(editText7);
+        tableRow.addView(editText8);
+        tableRow.addView(editText9);
+        tableRow.addView(editText10);
 
         tableLayout.addView(tableRow);
     }
+
     private String getLatestFileName(String directoryPath) {
         File directory = new File(directoryPath);
 
@@ -131,7 +202,7 @@ public class MainActivity extends AppCompatActivity {
         File[] files = directory.listFiles();
 
         // Sort the files in descending order based on the last modified timestamp
-        Arrays.sort(files, new Comparator <File>() {
+        Arrays.sort(files, new Comparator<File>() {
             @Override
             public int compare(File o1, File o2) {
                 return Long.compare(o2.lastModified(), o1.lastModified());
@@ -159,7 +230,6 @@ public class MainActivity extends AppCompatActivity {
         String currentDate = sdf.format(new Date());
 
 
-
         if (sellerName.isEmpty() || buyerName.isEmpty()) {
             Toast.makeText(MainActivity.this, "Please enter seller name and buyer name", Toast.LENGTH_SHORT).show();
             return;
@@ -182,10 +252,11 @@ public class MainActivity extends AppCompatActivity {
             document.open();
 
 
-            Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.hh);
+            Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.hfull);
             ByteArrayOutputStream stream = new ByteArrayOutputStream();
             bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
             Image image = Image.getInstance(stream.toByteArray());
+            image.scalePercent(2f);
             image.setAlignment(Image.ALIGN_CENTER);
             document.add(image);
 //            Image logo = Image.getInstance(R.drawable.hh);
@@ -196,17 +267,17 @@ public class MainActivity extends AppCompatActivity {
 
             Font Datef = new Font(Font.FontFamily.TIMES_ROMAN, 20);
             Font font3 = new Font(Font.FontFamily.TIMES_ROMAN, 15, Font.BOLD);
-            Paragraph Date = new Paragraph("Date" +currentDate,Datef);
+            Paragraph Date = new Paragraph("Date" + currentDate, Datef);
             Date.setAlignment(Element.ALIGN_RIGHT);
             document.add(Date);
 
-            Font font = new Font(Font.FontFamily.TIMES_ROMAN, 22, Font.BOLD);
-            Paragraph paragraph = new Paragraph(    "\nSeller Name: " + sellerName + "\nBuyer Name: " + buyerName + "\nGSTIN: " +gstin+ "\nTransport Name: " +Transporter + "\n\n\n", font);
+            Font font = new Font(Font.FontFamily.TIMES_ROMAN, 22);
+            Paragraph paragraph = new Paragraph("\nSeller Name: " + sellerName + "\nBuyer Name: " + buyerName + "\nGSTIN: " + gstin + "\nTransport Name: " + Transporter + "\n\n\n", font);
 //            paragraph.setAlignment(Element.ALIGN_CENTER);
             document.add(paragraph);
 
-            //add table to the document
 
+            //add table to the document
             PdfPTable table = new PdfPTable(3);
 
             PdfPCell cell1 = new PdfPCell(new Paragraph("Description", font3));
@@ -261,6 +332,96 @@ public class MainActivity extends AppCompatActivity {
             c3Cell.setHorizontalAlignment(Element.ALIGN_CENTER);
             table.addCell(c3Cell);
 
+            PdfPCell a4Cell = new PdfPCell(new Paragraph(a4EditText.getText().toString().isEmpty() ? " " : a4EditText.getText().toString()));
+            a4Cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+            table.addCell(a4Cell);
+
+
+            PdfPCell b4Cell = new PdfPCell(new Paragraph(b1EditText.getText().toString().isEmpty() ? " " : b4EditText.getText().toString()));
+            b4Cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+            table.addCell(b4Cell);
+
+            PdfPCell c4Cell = new PdfPCell(new Paragraph(c1EditText.getText().toString().isEmpty() ? " " : c4EditText.getText().toString()));
+            c4Cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+            table.addCell(c4Cell);
+
+            PdfPCell a5Cell = new PdfPCell(new Paragraph(a5EditText.getText().toString().isEmpty() ? " " : a5EditText.getText().toString()));
+            a5Cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+            table.addCell(a5Cell);
+
+
+            PdfPCell b5Cell = new PdfPCell(new Paragraph(b5EditText.getText().toString().isEmpty() ? " " : b5EditText.getText().toString()));
+            b5Cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+            table.addCell(b5Cell);
+
+            PdfPCell c5Cell = new PdfPCell(new Paragraph(c5EditText.getText().toString().isEmpty() ? " " : c5EditText.getText().toString()));
+            c5Cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+            table.addCell(c5Cell);
+
+            PdfPCell a6Cell = new PdfPCell(new Paragraph(a6EditText.getText().toString().isEmpty() ? " " : a6EditText.getText().toString()));
+            a6Cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+            table.addCell(a6Cell);
+
+            PdfPCell b6Cell = new PdfPCell(new Paragraph(b6EditText.getText().toString().isEmpty() ? " " : b6EditText.getText().toString()));
+            b6Cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+            table.addCell(b6Cell);
+
+            PdfPCell c6Cell = new PdfPCell(new Paragraph(c6EditText.getText().toString().isEmpty() ? " " : c6EditText.getText().toString()));
+            c6Cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+            table.addCell(c6Cell);
+
+            PdfPCell a7Cell = new PdfPCell(new Paragraph(a7EditText.getText().toString().isEmpty() ? " " : a7EditText.getText().toString()));
+            a7Cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+            table.addCell(a7Cell);
+
+            PdfPCell b7Cell = new PdfPCell(new Paragraph(b7EditText.getText().toString().isEmpty() ? " " : b7EditText.getText().toString()));
+            b7Cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+            table.addCell(b7Cell);
+
+            PdfPCell c7Cell = new PdfPCell(new Paragraph(c7EditText.getText().toString().isEmpty() ? " " : c7EditText.getText().toString()));
+            c7Cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+            table.addCell(c7Cell);
+
+
+            PdfPCell a8Cell = new PdfPCell(new Paragraph(a8EditText.getText().toString().isEmpty() ? " " : a8EditText.getText().toString()));
+            a8Cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+            table.addCell(a8Cell);
+
+
+            PdfPCell b8Cell = new PdfPCell(new Paragraph(b8EditText.getText().toString().isEmpty() ? " " : b8EditText.getText().toString()));
+            b8Cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+            table.addCell(b8Cell);
+
+            PdfPCell c8Cell = new PdfPCell(new Paragraph(c8EditText.getText().toString().isEmpty() ? " " : c8EditText.getText().toString()));
+            c8Cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+            table.addCell(c8Cell);
+
+            PdfPCell a9Cell = new PdfPCell(new Paragraph(a9EditText.getText().toString().isEmpty() ? " " : a9EditText.getText().toString()));
+            a9Cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+            table.addCell(a9Cell);
+
+
+            PdfPCell b9Cell = new PdfPCell(new Paragraph(b9EditText.getText().toString().isEmpty() ? " " : b9EditText.getText().toString()));
+            b9Cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+            table.addCell(b9Cell);
+
+            PdfPCell c9Cell = new PdfPCell(new Paragraph(c9EditText.getText().toString().isEmpty() ? " " : c9EditText.getText().toString()));
+            c9Cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+            table.addCell(c9Cell);
+
+            PdfPCell a10Cell = new PdfPCell(new Paragraph(a10EditText.getText().toString().isEmpty() ? " " : a10EditText.getText().toString()));
+            a10Cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+            table.addCell(a10Cell);
+
+
+            PdfPCell b10Cell = new PdfPCell(new Paragraph(b10EditText.getText().toString().isEmpty() ? " " : b10EditText.getText().toString()));
+            b10Cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+            table.addCell(b10Cell);
+
+            PdfPCell c10Cell = new PdfPCell(new Paragraph(c10EditText.getText().toString().isEmpty() ? " " : c10EditText.getText().toString()));
+            c10Cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+            table.addCell(c10Cell);
+
 //            int sum = calculateSumOfCColumn();
 //            Paragraph sumParagraph = new Paragraph(" "+ sum);
 
@@ -278,12 +439,12 @@ public class MainActivity extends AppCompatActivity {
             document.add(table);
 
             // add details
-            Paragraph paragraph2 = new Paragraph("\nDetails:\n",font);
+            Paragraph paragraph2 = new Paragraph("\nDetails:\n", font);
             paragraph2.setAlignment(Element.ALIGN_LEFT);
             document.add(paragraph2);
 
             Font font2 = new Font(Font.FontFamily.TIMES_ROMAN, 22);
-            Paragraph paragraph3 = new Paragraph(moreInfo,font2);
+            Paragraph paragraph3 = new Paragraph(moreInfo, font2);
             paragraph3.setAlignment(Element.ALIGN_LEFT);
             document.add(paragraph3);
 
@@ -305,14 +466,14 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(MainActivity.this, "Error saving PDF", Toast.LENGTH_SHORT).show();
         }
 
-        }
+    }
 
     private int calculateSumOfCColumn() {
 
-            int sum = 0;
-            sum += Integer.parseInt(c1EditText.getText().toString());
-            sum += Integer.parseInt(c2EditText.getText().toString());
-            return sum;
+        int sum = 0;
+        sum += Integer.parseInt(c1EditText.getText().toString());
+        sum += Integer.parseInt(c2EditText.getText().toString());
+        return sum;
 
     }
 
